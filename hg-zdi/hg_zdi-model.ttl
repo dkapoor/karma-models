@@ -1,0 +1,2425 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+@prefix schema: <http://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix memex: <http://schema.dig.isi.edu/ontology/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix km-dev: <http://isi.edu/integration/karma/dev#> .
+
+_:node1b1q25bf0x1 a km-dev:R2RMLMapping ;
+	km-dev:sourceName "hg_zdi-for-karma.jl" ;
+	km-dev:modelPublicationTime "1479417179616"^^xsd:long ;
+	km-dev:modelVersion "1.7" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"credit\"},{\"columnName\":\"values\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"access_complexity\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"vulnerability_details\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"zdi_id\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"access_vector\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"authentication\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"title\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"availability_impact\"}],[{\"columnName\":\"source_name\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"confidentiality_impact\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"link\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"date\"},{\"columnName\":\"$date\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"integrity_impact\"}],[{\"columnName\":\"_id\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"affected_vendors\"},{\"columnName\":\"values\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"affected_products\"},{\"columnName\":\"values\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"credit\"},{\"columnName\":\"values\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"date\"},{\"columnName\":\"date_iso\"}],[{\"columnName\":\"uri_id\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"access_complexity\"}],[{\"columnName\":\"source_name_id\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"vulnerability_details\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"zdi_id\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cdr_id\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"access_vector\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"authentication\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_scoring\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"title\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"availability_impact\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"confidentiality_impact\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"link\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cvss_score\"},{\"columnName\":\"integrity_impact\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"affected_vendors\"},{\"columnName\":\"values\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"affected_products\"},{\"columnName\":\"values\"}]]" ;
+	km-dev:hasModelLabel "hg_zdi-for-karma.jl" ;
+	km-dev:hasBaseURI "http://localhost:8080/source/" ;
+	km-dev:hasWorksheetHistory """[
+    {
+        \"tags\": [\"Transformation\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"zdi_id\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"value\": \"cdr_id\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"value\": \"return \\\"vulnerability/\\\"+getValue(\\\"zdi_id\\\").upper()\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"value\": \"false\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"zdi_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cdr_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SubmitPythonTransformationCommand\"
+    },
+    {
+        \"tags\": [\"Transformation\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"date\"},
+                    {\"columnName\": \"$date\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"value\": \"date_iso\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"value\": \"return DM.iso8601date(getValue(\\\"$date\\\"))\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"value\": \"false\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"date\\\"},{\\\"columnName\\\":\\\"$date\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"date\\\"},{\\\"columnName\\\":\\\"date_iso\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SubmitPythonTransformationCommand\"
+    },
+    {
+        \"tags\": [\"Transformation\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"cdr_id\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"value\": \"cvss_scoring\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"value\": \"return \\\"vulnerability/\\\"+getValue(\\\"zdi_id\\\").upper()+\\\"/scoring\\\"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"value\": \"false\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"zdi_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_scoring\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SubmitPythonTransformationCommand\"
+    },
+    {
+        \"tags\": [\"Transformation\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"_id\"}],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"value\": \"uri_id\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"value\": \"return getValue(\\\"_id\\\")\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"value\": \"false\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"uri_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SubmitPythonTransformationCommand\"
+    },
+    {
+        \"tags\": [\"Transformation\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"source_name\"}],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newColumnName\",
+                \"value\": \"source_name_id\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"transformationCode\",
+                \"value\": \"return getValue(\\\"source_name\\\")\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"errorDefaultValue\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"isJSONOutput\",
+                \"value\": \"false\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"source_name\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"source_name_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SubmitPythonTransformationCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"cdr_id\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"value\": \"isUriOfClass\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"value\": \"http://schema.dig.isi.edu/ontology/Vulnerability\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"value\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:Vulnerability1 (add)\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cdr_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cdr_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetMetaPropertyCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"cvss_score\"},
+                    {\"columnName\": \"access_complexity\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.dig.isi.edu/ontology/cvssComplexity\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:CVSS1 (add)\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/CVSS\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"access_complexity\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"access_complexity\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"cvss_score\"},
+                    {\"columnName\": \"access_vector\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.dig.isi.edu/ontology/cvssAccessVector\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:CVSS1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/CVSS\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"access_vector\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"access_vector\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"cvss_score\"},
+                    {\"columnName\": \"authentication\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.dig.isi.edu/ontology/cvssAuthentication\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:CVSS1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/CVSS\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"authentication\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"authentication\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"cvss_score\"},
+                    {\"columnName\": \"availability_impact\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.dig.isi.edu/ontology/cvssAvailability\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:CVSS1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/CVSS\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"availability_impact\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"availability_impact\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"cvss_score\"},
+                    {\"columnName\": \"confidentiality_impact\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.dig.isi.edu/ontology/cvssConfidentiality\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:CVSS1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/CVSS\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"confidentiality_impact\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"confidentiality_impact\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"cvss_score\"},
+                    {\"columnName\": \"integrity_impact\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.dig.isi.edu/ontology/cvssIntegrity\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:CVSS1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/CVSS\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"integrity_impact\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_score\\\"},{\\\"columnName\\\":\\\"integrity_impact\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"vulnerability_details\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/description\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:Vulnerability1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"vulnerability_details\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"vulnerability_details\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"title\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/title\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"Vulnerability1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"title\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"title\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"link\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/url\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:Vulnerability1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"link\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"link\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"date\"},
+                    {\"columnName\": \"date_iso\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/startDate\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:Vulnerability1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"date\\\"},{\\\"columnName\\\":\\\"date_iso\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"date\\\"},{\\\"columnName\\\":\\\"date_iso\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"affected_products\"},
+                    {\"columnName\": \"values\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/name\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:SoftwareSystem1 (add)\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/SoftwareSystem1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/SoftwareSystem\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"affected_products\\\"},{\\\"columnName\\\":\\\"values\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"affected_products\\\"},{\\\"columnName\\\":\\\"values\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"affected_vendors\"},
+                    {\"columnName\": \"values\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/seller\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:SoftwareSystem1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/SoftwareSystem1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/SoftwareSystem\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"affected_vendors\\\"},{\\\"columnName\\\":\\\"values\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"affected_vendors\\\"},{\\\"columnName\\\":\\\"values\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"credit\"},
+                    {\"columnName\": \"values\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/sourcedFrom\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:Vulnerability1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"credit\\\"},{\\\"columnName\\\":\\\"values\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"credit\\\"},{\\\"columnName\\\":\\\"values\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"cvss_scoring\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"metaPropertyName\",
+                \"value\": \"isUriOfClass\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"metaPropertyUri\",
+                \"value\": \"http://schema.dig.isi.edu/ontology/CVSS\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"metaPropertyId\",
+                \"value\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://isi.edu/integration/karma/dev#classLink\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:CVSS1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/CVSS\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_scoring\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"cvss_scoring\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetMetaPropertyCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"zdi_id\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/name\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:Vulnerability1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"zdi_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"zdi_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"literalValue\",
+                \"value\": \"http://effect.isi.edu/identifier/database\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"literalType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"isUri\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"AddLiteralNodeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"literalValue\",
+                \"value\": \"http://effect.isi.edu/identifier/source\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"literalType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"isUri\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"AddLiteralNodeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"uri_id\"}],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/source\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:Vulnerability1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"uri_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"uri_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [{\"columnName\": \"source_name_id\"}],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"FullType\": \"http://schema.org/publisher\",
+                    \"isPrimary\": true,
+                    \"DomainLabel\": \"memex:Vulnerability1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"source_name_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"source_name_id\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"value\": \"WSP1:WS5AL\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [{
+                    \"edgeTargetUri\": \"http://schema.dig.isi.edu/ontology/CVSS\",
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/hasCVSS\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"edgeTargetId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"edgeSourceUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"value\": \"WSP1:WS5AL\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [{
+                    \"edgeTargetUri\": \"http://schema.dig.isi.edu/ontology/SoftwareSystem\",
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/vulnerabilityOf\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"edgeTargetId\": \"http://schema.dig.isi.edu/ontology/SoftwareSystem1\",
+                    \"edgeSourceUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"value\": \"WSP2:WS5AL\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [{
+                    \"edgeTargetUri\": \"http://schema.dig.isi.edu/ontology/Identifier\",
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/identifier\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"edgeTargetId\": \"http://schema.dig.isi.edu/ontology/Identifier1\",
+                    \"edgeSourceUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [{
+                    \"edgeTargetUri\": \"http://effect.isi.edu/identifier/database\",
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/hasType\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Identifier1\",
+                    \"edgeTargetId\": \"http://effect.isi.edu/identifier/database1\",
+                    \"edgeSourceUri\": \"http://schema.dig.isi.edu/ontology/Identifier\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"value\": \"WSP2:WS5AL\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [{
+                    \"edgeTargetUri\": \"http://schema.dig.isi.edu/ontology/Identifier\",
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/identifier\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"edgeTargetId\": \"http://schema.dig.isi.edu/ontology/Identifier2\",
+                    \"edgeSourceUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [{
+                    \"edgeTargetUri\": \"http://effect.isi.edu/identifier/source\",
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/hasType\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Identifier2\",
+                    \"edgeTargetId\": \"http://effect.isi.edu/identifier/source1\",
+                    \"edgeSourceUri\": \"http://schema.dig.isi.edu/ontology/Identifier\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"label\",
+                \"value\": \"http://effect.isi.edu/identifier/database\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"id\",
+                \"value\": \"http://effect.isi.edu/identifier/database1\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"DeleteNodeCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [{
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/identifier\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"edgeTargetId\": \"http://schema.dig.isi.edu/ontology/Identifier1\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"value\": \"WSP1:WS103949AL\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"label\",
+                \"value\": \"http://effect.isi.edu/identifier/source\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"id\",
+                \"value\": \"http://effect.isi.edu/identifier/source1\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"DeleteNodeCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [{
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/identifier\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"edgeTargetId\": \"http://schema.dig.isi.edu/ontology/Identifier2\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"value\": \"WSP1:WS103949AL\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [{
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/hasType\",
+                    \"edgeTargetId\": \"http://effect.isi.edu/identifier/database1\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Identifier1\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"value\": \"WSP2:WS458079AL\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [{
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/hasType\",
+                    \"edgeTargetId\": \"http://effect.isi.edu/identifier/source1\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Identifier2\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"value\": \"WSP2:WS458079AL\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
+    }
+]""" .
+
+km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d a rr:TriplesMap .
+
+_:node1b1q25bf0x1 km-dev:hasTriplesMap km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d .
+
+km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x2 rr:tableName "hg_zdi-for-karma.jl" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasLogicalTable _:node1b1q25bf0x2 .
+
+km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d rr:logicalTable _:node1b1q25bf0x2 ;
+	rr:subjectMap _:node1b1q25bf0x3 .
+
+_:node1b1q25bf0x1 km-dev:hasSubjectMap _:node1b1q25bf0x3 .
+
+_:node1b1q25bf0x3 km-dev:isPartOfMapping _:node1b1q25bf0x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://schema.dig.isi.edu/ontology/CVSS1" ;
+	rr:class memex:CVSS ;
+	rr:template "{[\"json_rep\",\"cvss_scoring\"]}" .
+
+km-dev:PredicateObjectMap_b5b69142-c4c3-4c73-8b8b-d63b37647d0a rr:predicate memex:cvssAccessVector .
+
+_:node1b1q25bf0x4 rr:column "[\"json_rep\",\"cvss_score\",\"access_vector\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x4 .
+
+km-dev:PredicateObjectMap_b5b69142-c4c3-4c73-8b8b-d63b37647d0a rr:objectMap _:node1b1q25bf0x4 .
+
+km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d rr:predicateObjectMap km-dev:PredicateObjectMap_b5b69142-c4c3-4c73-8b8b-d63b37647d0a .
+
+km-dev:PredicateObjectMap_b5b69142-c4c3-4c73-8b8b-d63b37647d0a a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_b5b69142-c4c3-4c73-8b8b-d63b37647d0a .
+
+km-dev:PredicateObjectMap_3359a437-a865-4e4f-a21d-a953b41e0544 rr:predicate memex:cvssAuthentication .
+
+_:node1b1q25bf0x5 rr:column "[\"json_rep\",\"cvss_score\",\"authentication\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x5 .
+
+km-dev:PredicateObjectMap_3359a437-a865-4e4f-a21d-a953b41e0544 rr:objectMap _:node1b1q25bf0x5 .
+
+km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d rr:predicateObjectMap km-dev:PredicateObjectMap_3359a437-a865-4e4f-a21d-a953b41e0544 .
+
+km-dev:PredicateObjectMap_3359a437-a865-4e4f-a21d-a953b41e0544 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_3359a437-a865-4e4f-a21d-a953b41e0544 .
+
+km-dev:PredicateObjectMap_56224146-8d1c-444f-a0f8-ae7e27ef5763 rr:predicate memex:cvssAvailability .
+
+_:node1b1q25bf0x6 rr:column "[\"json_rep\",\"cvss_score\",\"availability_impact\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x6 .
+
+km-dev:PredicateObjectMap_56224146-8d1c-444f-a0f8-ae7e27ef5763 rr:objectMap _:node1b1q25bf0x6 .
+
+km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d rr:predicateObjectMap km-dev:PredicateObjectMap_56224146-8d1c-444f-a0f8-ae7e27ef5763 .
+
+km-dev:PredicateObjectMap_56224146-8d1c-444f-a0f8-ae7e27ef5763 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_56224146-8d1c-444f-a0f8-ae7e27ef5763 .
+
+km-dev:PredicateObjectMap_324d0e43-25f8-4213-807a-a016359d0554 rr:predicate memex:cvssComplexity .
+
+_:node1b1q25bf0x7 rr:column "[\"json_rep\",\"cvss_score\",\"access_complexity\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x7 .
+
+km-dev:PredicateObjectMap_324d0e43-25f8-4213-807a-a016359d0554 rr:objectMap _:node1b1q25bf0x7 .
+
+km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d rr:predicateObjectMap km-dev:PredicateObjectMap_324d0e43-25f8-4213-807a-a016359d0554 .
+
+km-dev:PredicateObjectMap_324d0e43-25f8-4213-807a-a016359d0554 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_324d0e43-25f8-4213-807a-a016359d0554 .
+
+km-dev:PredicateObjectMap_a53c9679-169a-4a2a-9f23-da11a2fd8952 rr:predicate memex:cvssConfidentiality .
+
+_:node1b1q25bf0x8 rr:column "[\"json_rep\",\"cvss_score\",\"confidentiality_impact\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x8 .
+
+km-dev:PredicateObjectMap_a53c9679-169a-4a2a-9f23-da11a2fd8952 rr:objectMap _:node1b1q25bf0x8 .
+
+km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d rr:predicateObjectMap km-dev:PredicateObjectMap_a53c9679-169a-4a2a-9f23-da11a2fd8952 .
+
+km-dev:PredicateObjectMap_a53c9679-169a-4a2a-9f23-da11a2fd8952 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a53c9679-169a-4a2a-9f23-da11a2fd8952 .
+
+km-dev:PredicateObjectMap_13d06b47-e226-4eae-a636-75f54f49c758 rr:predicate memex:cvssIntegrity .
+
+_:node1b1q25bf0x9 rr:column "[\"json_rep\",\"cvss_score\",\"integrity_impact\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x9 .
+
+km-dev:PredicateObjectMap_13d06b47-e226-4eae-a636-75f54f49c758 rr:objectMap _:node1b1q25bf0x9 .
+
+km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d rr:predicateObjectMap km-dev:PredicateObjectMap_13d06b47-e226-4eae-a636-75f54f49c758 .
+
+km-dev:PredicateObjectMap_13d06b47-e226-4eae-a636-75f54f49c758 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_13d06b47-e226-4eae-a636-75f54f49c758 .
+
+km-dev:TriplesMap_3de125af-e46b-4251-99c1-eabb05a1cc14 a rr:TriplesMap .
+
+_:node1b1q25bf0x1 km-dev:hasTriplesMap km-dev:TriplesMap_3de125af-e46b-4251-99c1-eabb05a1cc14 .
+
+km-dev:TriplesMap_3de125af-e46b-4251-99c1-eabb05a1cc14 km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x10 rr:tableName "hg_zdi-for-karma.jl" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasLogicalTable _:node1b1q25bf0x10 .
+
+km-dev:TriplesMap_3de125af-e46b-4251-99c1-eabb05a1cc14 rr:logicalTable _:node1b1q25bf0x10 ;
+	rr:subjectMap _:node1b1q25bf0x11 .
+
+_:node1b1q25bf0x1 km-dev:hasSubjectMap _:node1b1q25bf0x11 .
+
+_:node1b1q25bf0x11 km-dev:isPartOfMapping _:node1b1q25bf0x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://schema.dig.isi.edu/ontology/SoftwareSystem1" ;
+	rr:class memex:SoftwareSystem ;
+	rr:termType rr:BlankNode ;
+	km-dev:namePrefix "memex:SoftwareSystem1" .
+
+km-dev:PredicateObjectMap_6373bfeb-d3b1-4c2a-990b-0c8029ad88c6 rr:predicate schema:name .
+
+_:node1b1q25bf0x12 rr:column "[\"json_rep\",\"affected_products\",\"values\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x12 .
+
+km-dev:PredicateObjectMap_6373bfeb-d3b1-4c2a-990b-0c8029ad88c6 rr:objectMap _:node1b1q25bf0x12 .
+
+km-dev:TriplesMap_3de125af-e46b-4251-99c1-eabb05a1cc14 rr:predicateObjectMap km-dev:PredicateObjectMap_6373bfeb-d3b1-4c2a-990b-0c8029ad88c6 .
+
+km-dev:PredicateObjectMap_6373bfeb-d3b1-4c2a-990b-0c8029ad88c6 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_6373bfeb-d3b1-4c2a-990b-0c8029ad88c6 .
+
+km-dev:PredicateObjectMap_d119849e-6a48-40ae-b349-40db6fcb5994 rr:predicate schema:seller .
+
+_:node1b1q25bf0x13 rr:column "[\"json_rep\",\"affected_vendors\",\"values\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x13 .
+
+km-dev:PredicateObjectMap_d119849e-6a48-40ae-b349-40db6fcb5994 rr:objectMap _:node1b1q25bf0x13 .
+
+km-dev:TriplesMap_3de125af-e46b-4251-99c1-eabb05a1cc14 rr:predicateObjectMap km-dev:PredicateObjectMap_d119849e-6a48-40ae-b349-40db6fcb5994 .
+
+km-dev:PredicateObjectMap_d119849e-6a48-40ae-b349-40db6fcb5994 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_d119849e-6a48-40ae-b349-40db6fcb5994 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 a rr:TriplesMap .
+
+_:node1b1q25bf0x1 km-dev:hasTriplesMap km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x14 rr:tableName "hg_zdi-for-karma.jl" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasLogicalTable _:node1b1q25bf0x14 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:logicalTable _:node1b1q25bf0x14 ;
+	rr:subjectMap _:node1b1q25bf0x15 .
+
+_:node1b1q25bf0x1 km-dev:hasSubjectMap _:node1b1q25bf0x15 .
+
+_:node1b1q25bf0x15 km-dev:isPartOfMapping _:node1b1q25bf0x1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://schema.dig.isi.edu/ontology/Vulnerability1" ;
+	rr:class memex:Vulnerability ;
+	rr:template "{[\"json_rep\",\"cdr_id\"]}" ;
+	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_a9ed2821-191c-466a-8ecc-e131e31e7243 rr:predicate memex:hasCVSS .
+
+km-dev:RefObjectMap_80b89478-0680-41ed-8b71-7c054660f34b a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_852d84d9-1a1b-4e23-b977-30d19252f05d ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap km-dev:RefObjectMap_80b89478-0680-41ed-8b71-7c054660f34b .
+
+km-dev:PredicateObjectMap_a9ed2821-191c-466a-8ecc-e131e31e7243 rr:objectMap km-dev:RefObjectMap_80b89478-0680-41ed-8b71-7c054660f34b .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_a9ed2821-191c-466a-8ecc-e131e31e7243 .
+
+km-dev:PredicateObjectMap_a9ed2821-191c-466a-8ecc-e131e31e7243 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_a9ed2821-191c-466a-8ecc-e131e31e7243 .
+
+km-dev:PredicateObjectMap_9ded672f-55be-49c8-a6dd-bb7f490154c6 rr:predicate memex:vulnerabilityOf .
+
+km-dev:RefObjectMap_e4546e01-86f2-44f5-9d94-4d2992685183 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_3de125af-e46b-4251-99c1-eabb05a1cc14 ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap km-dev:RefObjectMap_e4546e01-86f2-44f5-9d94-4d2992685183 .
+
+km-dev:PredicateObjectMap_9ded672f-55be-49c8-a6dd-bb7f490154c6 rr:objectMap km-dev:RefObjectMap_e4546e01-86f2-44f5-9d94-4d2992685183 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_9ded672f-55be-49c8-a6dd-bb7f490154c6 .
+
+km-dev:PredicateObjectMap_9ded672f-55be-49c8-a6dd-bb7f490154c6 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_9ded672f-55be-49c8-a6dd-bb7f490154c6 .
+
+km-dev:PredicateObjectMap_c7eb7155-9d5e-4b6c-9ba8-ba1bbf96e45f rr:predicate schema:description .
+
+_:node1b1q25bf0x16 rr:column "[\"json_rep\",\"vulnerability_details\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x16 .
+
+km-dev:PredicateObjectMap_c7eb7155-9d5e-4b6c-9ba8-ba1bbf96e45f rr:objectMap _:node1b1q25bf0x16 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_c7eb7155-9d5e-4b6c-9ba8-ba1bbf96e45f .
+
+km-dev:PredicateObjectMap_c7eb7155-9d5e-4b6c-9ba8-ba1bbf96e45f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c7eb7155-9d5e-4b6c-9ba8-ba1bbf96e45f .
+
+km-dev:PredicateObjectMap_26e9599b-68ce-4628-aeff-cd8d3c3e59cb rr:predicate schema:name .
+
+_:node1b1q25bf0x17 rr:column "[\"json_rep\",\"zdi_id\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x17 .
+
+km-dev:PredicateObjectMap_26e9599b-68ce-4628-aeff-cd8d3c3e59cb rr:objectMap _:node1b1q25bf0x17 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_26e9599b-68ce-4628-aeff-cd8d3c3e59cb .
+
+km-dev:PredicateObjectMap_26e9599b-68ce-4628-aeff-cd8d3c3e59cb a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_26e9599b-68ce-4628-aeff-cd8d3c3e59cb .
+
+km-dev:PredicateObjectMap_f23acde4-4c8a-460b-ae1f-5b4a6519cb8c rr:predicate schema:publisher .
+
+_:node1b1q25bf0x18 rr:column "source_name" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x18 .
+
+km-dev:PredicateObjectMap_f23acde4-4c8a-460b-ae1f-5b4a6519cb8c rr:objectMap _:node1b1q25bf0x18 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_f23acde4-4c8a-460b-ae1f-5b4a6519cb8c .
+
+km-dev:PredicateObjectMap_f23acde4-4c8a-460b-ae1f-5b4a6519cb8c a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_f23acde4-4c8a-460b-ae1f-5b4a6519cb8c .
+
+km-dev:PredicateObjectMap_0cb4a8a7-3d5a-4f7b-80e6-844320957f90 rr:predicate schema:source .
+
+_:node1b1q25bf0x19 rr:column "_id" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x19 .
+
+km-dev:PredicateObjectMap_0cb4a8a7-3d5a-4f7b-80e6-844320957f90 rr:objectMap _:node1b1q25bf0x19 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_0cb4a8a7-3d5a-4f7b-80e6-844320957f90 .
+
+km-dev:PredicateObjectMap_0cb4a8a7-3d5a-4f7b-80e6-844320957f90 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_0cb4a8a7-3d5a-4f7b-80e6-844320957f90 .
+
+km-dev:PredicateObjectMap_70ce0da9-8bbf-48a9-a0b5-0fbffa6658aa rr:predicate schema:sourcedFrom .
+
+_:node1b1q25bf0x20 rr:column "[\"json_rep\",\"credit\",\"values\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x20 .
+
+km-dev:PredicateObjectMap_70ce0da9-8bbf-48a9-a0b5-0fbffa6658aa rr:objectMap _:node1b1q25bf0x20 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_70ce0da9-8bbf-48a9-a0b5-0fbffa6658aa .
+
+km-dev:PredicateObjectMap_70ce0da9-8bbf-48a9-a0b5-0fbffa6658aa a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_70ce0da9-8bbf-48a9-a0b5-0fbffa6658aa .
+
+km-dev:PredicateObjectMap_c264e709-1036-49c9-bddf-8a5abe26f051 rr:predicate schema:startDate .
+
+_:node1b1q25bf0x21 rr:column "[\"json_rep\",\"date\",\"date_iso\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x21 .
+
+km-dev:PredicateObjectMap_c264e709-1036-49c9-bddf-8a5abe26f051 rr:objectMap _:node1b1q25bf0x21 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_c264e709-1036-49c9-bddf-8a5abe26f051 .
+
+km-dev:PredicateObjectMap_c264e709-1036-49c9-bddf-8a5abe26f051 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_c264e709-1036-49c9-bddf-8a5abe26f051 .
+
+km-dev:PredicateObjectMap_d6862ec0-16c7-434c-ab45-be3e932e0d97 rr:predicate schema:title .
+
+_:node1b1q25bf0x22 rr:column "[\"json_rep\",\"title\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x22 .
+
+km-dev:PredicateObjectMap_d6862ec0-16c7-434c-ab45-be3e932e0d97 rr:objectMap _:node1b1q25bf0x22 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_d6862ec0-16c7-434c-ab45-be3e932e0d97 .
+
+km-dev:PredicateObjectMap_d6862ec0-16c7-434c-ab45-be3e932e0d97 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_d6862ec0-16c7-434c-ab45-be3e932e0d97 .
+
+km-dev:PredicateObjectMap_e70f7ac2-416b-4ef8-8c8a-c8d727ed50f4 rr:predicate schema:url .
+
+_:node1b1q25bf0x23 rr:column "[\"json_rep\",\"link\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasObjectMap _:node1b1q25bf0x23 .
+
+km-dev:PredicateObjectMap_e70f7ac2-416b-4ef8-8c8a-c8d727ed50f4 rr:objectMap _:node1b1q25bf0x23 .
+
+km-dev:TriplesMap_ea317faf-1bd6-40d9-aa1c-8df0472ae3c5 rr:predicateObjectMap km-dev:PredicateObjectMap_e70f7ac2-416b-4ef8-8c8a-c8d727ed50f4 .
+
+km-dev:PredicateObjectMap_e70f7ac2-416b-4ef8-8c8a-c8d727ed50f4 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b1q25bf0x1 .
+
+_:node1b1q25bf0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_e70f7ac2-416b-4ef8-8c8a-c8d727ed50f4 .

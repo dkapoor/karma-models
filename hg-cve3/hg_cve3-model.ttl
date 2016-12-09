@@ -14,12 +14,12 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix km-dev: <http://isi.edu/integration/karma/dev#> .
 
-_:node1b3ijtojpx1 a km-dev:R2RMLMapping ;
+_:node1b3ijvtorx1 a km-dev:R2RMLMapping ;
 	km-dev:sourceName "hg_cve-for-karma.jl" ;
-	km-dev:modelPublicationTime "1481314853497"^^xsd:long ;
+	km-dev:modelPublicationTime "1481314924316"^^xsd:long ;
 	km-dev:modelVersion "1.7" ;
-	km-dev:hasInputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}]]" ;
-	km-dev:hasOutputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}]]" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"timestamp\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"timestamp\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}]]" ;
 	km-dev:hasModelLabel "hg_cve3" ;
 	km-dev:hasBaseURI "http://localhost:8080/source/data/" ;
 	km-dev:hasWorksheetHistory """[
@@ -331,29 +331,107 @@ _:node1b3ijtojpx1 a km-dev:R2RMLMapping ;
             }
         ],
         \"commandName\": \"SetMetaPropertyCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"timestamp\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://schema.org/startDate\",
+                    \"DomainLabel\": \"memex:Vulnerability1\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"timestamp\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"timestamp\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
     }
 ]""" .
 
-km-dev:TriplesMap_66a9b3b2-7f62-4bc5-8a95-74c09d45de9b a rr:TriplesMap .
+km-dev:TriplesMap_b0447d4c-9f16-41fc-b4f2-0445fc37623e a rr:TriplesMap .
 
-_:node1b3ijtojpx1 km-dev:hasTriplesMap km-dev:TriplesMap_66a9b3b2-7f62-4bc5-8a95-74c09d45de9b .
+_:node1b3ijvtorx1 km-dev:hasTriplesMap km-dev:TriplesMap_b0447d4c-9f16-41fc-b4f2-0445fc37623e .
 
-km-dev:TriplesMap_66a9b3b2-7f62-4bc5-8a95-74c09d45de9b km-dev:isPartOfMapping _:node1b3ijtojpx1 .
+km-dev:TriplesMap_b0447d4c-9f16-41fc-b4f2-0445fc37623e km-dev:isPartOfMapping _:node1b3ijvtorx1 .
 
-_:node1b3ijtojpx2 rr:tableName "hg_cve-for-karma.jl" ;
+_:node1b3ijvtorx2 rr:tableName "hg_cve-for-karma.jl" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1b3ijtojpx1 .
+	km-dev:isPartOfMapping _:node1b3ijvtorx1 .
 
-_:node1b3ijtojpx1 km-dev:hasLogicalTable _:node1b3ijtojpx2 .
+_:node1b3ijvtorx1 km-dev:hasLogicalTable _:node1b3ijvtorx2 .
 
-km-dev:TriplesMap_66a9b3b2-7f62-4bc5-8a95-74c09d45de9b rr:logicalTable _:node1b3ijtojpx2 ;
-	rr:subjectMap _:node1b3ijtojpx3 .
+km-dev:TriplesMap_b0447d4c-9f16-41fc-b4f2-0445fc37623e rr:logicalTable _:node1b3ijvtorx2 ;
+	rr:subjectMap _:node1b3ijvtorx3 .
 
-_:node1b3ijtojpx1 km-dev:hasSubjectMap _:node1b3ijtojpx3 .
+_:node1b3ijvtorx1 km-dev:hasSubjectMap _:node1b3ijvtorx3 .
 
-_:node1b3ijtojpx3 km-dev:isPartOfMapping _:node1b3ijtojpx1 ;
+_:node1b3ijvtorx3 km-dev:isPartOfMapping _:node1b3ijvtorx1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://schema.dig.isi.edu/ontology/Vulnerability1" ;
 	rr:class memex:Vulnerability ;
 	rr:template "{[\"json_rep\",\"cve\"]}" ;
 	a km-dev:steinerTreeRootNode .
+
+km-dev:PredicateObjectMap_d173580c-985b-4aff-8e84-ac7343427729 rr:predicate schema:startDate .
+
+_:node1b3ijvtorx4 rr:column "[\"json_rep\",\"timestamp\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b3ijvtorx1 .
+
+_:node1b3ijvtorx1 km-dev:hasObjectMap _:node1b3ijvtorx4 .
+
+km-dev:PredicateObjectMap_d173580c-985b-4aff-8e84-ac7343427729 rr:objectMap _:node1b3ijvtorx4 .
+
+km-dev:TriplesMap_b0447d4c-9f16-41fc-b4f2-0445fc37623e rr:predicateObjectMap km-dev:PredicateObjectMap_d173580c-985b-4aff-8e84-ac7343427729 .
+
+km-dev:PredicateObjectMap_d173580c-985b-4aff-8e84-ac7343427729 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b3ijvtorx1 .
+
+_:node1b3ijvtorx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_d173580c-985b-4aff-8e84-ac7343427729 .

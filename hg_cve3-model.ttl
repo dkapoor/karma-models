@@ -14,12 +14,12 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix km-dev: <http://isi.edu/integration/karma/dev#> .
 
-_:node1b3iguuo0x1 a km-dev:R2RMLMapping ;
+_:node1b3ih2jfmx1 a km-dev:R2RMLMapping ;
 	km-dev:sourceName "hg_cve-for-karma.jl" ;
-	km-dev:modelPublicationTime "1481311746816"^^xsd:long ;
+	km-dev:modelPublicationTime "1481311866358"^^xsd:long ;
 	km-dev:modelVersion "1.7" ;
-	km-dev:hasInputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"timestamp\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}]]" ;
-	km-dev:hasOutputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"timestamp\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}]]" ;
+	km-dev:hasInputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"timestamp\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"vulnerability_scoring\"},{\"columnName\":\"cvss:base_metrics\"},{\"columnName\":\"cvss:access-complexity\"},{\"columnName\":\"#text\"}]]" ;
+	km-dev:hasOutputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"timestamp\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"vulnerability_scoring\"},{\"columnName\":\"cvss:base_metrics\"},{\"columnName\":\"cvss:access-complexity\"},{\"columnName\":\"#text\"}]]" ;
 	km-dev:hasModelLabel "hg_cve3" ;
 	km-dev:hasBaseURI "http://localhost:8080/source/data/" ;
 	km-dev:hasWorksheetHistory """[
@@ -257,6 +257,86 @@ _:node1b3iguuo0x1 a km-dev:R2RMLMapping ;
         \"commandName\": \"SetWorksheetPropertiesCommand\"
     },
     {
+        \"tags\": [\"Transformation\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"properties\",
+                \"value\": {
+                    \"hasServiceProperties\": false,
+                    \"hasPrefix\": false,
+                    \"graphLabel\": \"\",
+                    \"hasGithubURL\": true,
+                    \"GithubURL\": \"\",
+                    \"hasBaseURI\": false,
+                    \"baseURI\": \"\"
+                },
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetWorksheetPropertiesCommand\"
+    },
+    {
+        \"tags\": [\"Transformation\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"properties\",
+                \"value\": {
+                    \"hasServiceProperties\": false,
+                    \"hasPrefix\": false,
+                    \"graphLabel\": \"\",
+                    \"hasGithubURL\": true,
+                    \"GithubURL\": \"https://github.com/dkapoor/karma-models\",
+                    \"hasBaseURI\": false,
+                    \"baseURI\": \"\"
+                },
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetWorksheetPropertiesCommand\"
+    },
+    {
         \"tags\": [\"SemanticType\"],
         \"model\": \"new\",
         \"inputParameters\": [
@@ -392,46 +472,216 @@ _:node1b3iguuo0x1 a km-dev:R2RMLMapping ;
             }
         ],
         \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"SemanticType\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"hNodeId\",
+                \"value\": [
+                    {\"columnName\": \"json_rep\"},
+                    {\"columnName\": \"vulnerability_scoring\"},
+                    {\"columnName\": \"cvss:base_metrics\"},
+                    {\"columnName\": \"cvss:access-complexity\"},
+                    {\"columnName\": \"#text\"}
+                ],
+                \"type\": \"hNodeId\"
+            },
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"SemanticTypesArray\",
+                \"value\": [{
+                    \"isPrimary\": true,
+                    \"FullType\": \"http://schema.dig.isi.edu/ontology/cvssComplexity\",
+                    \"DomainLabel\": \"memex:CVSS1 (add)\",
+                    \"DomainId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"DomainUri\": \"http://schema.dig.isi.edu/ontology/CVSS\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"trainAndShowUpdates\",
+                \"value\": true,
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"rdfLiteralType\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"language\",
+                \"value\": \"\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"vulnerability_scoring\\\"},{\\\"columnName\\\":\\\"cvss:base_metrics\\\"},{\\\"columnName\\\":\\\"cvss:access-complexity\\\"},{\\\"columnName\\\":\\\"#text\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[{\\\"value\\\":[{\\\"columnName\\\":\\\"json_rep\\\"},{\\\"columnName\\\":\\\"vulnerability_scoring\\\"},{\\\"columnName\\\":\\\"cvss:base_metrics\\\"},{\\\"columnName\\\":\\\"cvss:access-complexity\\\"},{\\\"columnName\\\":\\\"#text\\\"}]}]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"SetSemanticTypeCommand\"
+    },
+    {
+        \"tags\": [\"Modeling\"],
+        \"model\": \"new\",
+        \"inputParameters\": [
+            {
+                \"name\": \"worksheetId\",
+                \"value\": \"W\",
+                \"type\": \"worksheetId\"
+            },
+            {
+                \"name\": \"selectionName\",
+                \"value\": \"DEFAULT_TEST\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"initialEdges\",
+                \"value\": [],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"alignmentId\",
+                \"value\": \"WSP1:WS5AL\",
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"newEdges\",
+                \"value\": [{
+                    \"edgeTargetUri\": \"http://schema.dig.isi.edu/ontology/CVSS\",
+                    \"edgeId\": \"http://schema.dig.isi.edu/ontology/hasCVSS\",
+                    \"edgeTargetId\": \"http://schema.dig.isi.edu/ontology/CVSS1\",
+                    \"edgeSourceId\": \"http://schema.dig.isi.edu/ontology/Vulnerability1\",
+                    \"edgeSourceUri\": \"http://schema.dig.isi.edu/ontology/Vulnerability\"
+                }],
+                \"type\": \"other\"
+            },
+            {
+                \"name\": \"inputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            },
+            {
+                \"name\": \"outputColumns\",
+                \"value\": \"[]\",
+                \"type\": \"hNodeIdList\"
+            }
+        ],
+        \"commandName\": \"ChangeInternalNodeLinksCommand\"
     }
 ]""" .
 
-km-dev:TriplesMap_f3af79db-1ec6-4e64-a50c-7abeda6f10d1 a rr:TriplesMap .
+km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 a rr:TriplesMap .
 
-_:node1b3iguuo0x1 km-dev:hasTriplesMap km-dev:TriplesMap_f3af79db-1ec6-4e64-a50c-7abeda6f10d1 .
+_:node1b3ih2jfmx1 km-dev:hasTriplesMap km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 .
 
-km-dev:TriplesMap_f3af79db-1ec6-4e64-a50c-7abeda6f10d1 km-dev:isPartOfMapping _:node1b3iguuo0x1 .
+km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
 
-_:node1b3iguuo0x2 rr:tableName "hg_cve-for-karma.jl" ;
+_:node1b3ih2jfmx2 rr:tableName "hg_cve-for-karma.jl" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1b3iguuo0x1 .
+	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
 
-_:node1b3iguuo0x1 km-dev:hasLogicalTable _:node1b3iguuo0x2 .
+_:node1b3ih2jfmx1 km-dev:hasLogicalTable _:node1b3ih2jfmx2 .
 
-km-dev:TriplesMap_f3af79db-1ec6-4e64-a50c-7abeda6f10d1 rr:logicalTable _:node1b3iguuo0x2 ;
-	rr:subjectMap _:node1b3iguuo0x3 .
+km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 rr:logicalTable _:node1b3ih2jfmx2 ;
+	rr:subjectMap _:node1b3ih2jfmx3 .
 
-_:node1b3iguuo0x1 km-dev:hasSubjectMap _:node1b3iguuo0x3 .
+_:node1b3ih2jfmx1 km-dev:hasSubjectMap _:node1b3ih2jfmx3 .
 
-_:node1b3iguuo0x3 km-dev:isPartOfMapping _:node1b3iguuo0x1 ;
+_:node1b3ih2jfmx3 km-dev:isPartOfMapping _:node1b3ih2jfmx1 ;
+	a rr:SubjectMap ;
+	km-dev:alignmentNodeId "http://schema.dig.isi.edu/ontology/CVSS1" ;
+	rr:class memex:CVSS ;
+	rr:termType rr:BlankNode ;
+	km-dev:namePrefix "memex:CVSS1" .
+
+km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 rr:predicate memex:cvssComplexity .
+
+_:node1b3ih2jfmx4 rr:column "[\"json_rep\",\"vulnerability_scoring\",\"cvss:base_metrics\",\"cvss:access-complexity\",\"#text\"]" ;
+	a rr:ObjectMap ;
+	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+
+_:node1b3ih2jfmx1 km-dev:hasObjectMap _:node1b3ih2jfmx4 .
+
+km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 rr:objectMap _:node1b3ih2jfmx4 .
+
+km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 rr:predicateObjectMap km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 .
+
+km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+
+_:node1b3ih2jfmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 .
+
+km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed a rr:TriplesMap .
+
+_:node1b3ih2jfmx1 km-dev:hasTriplesMap km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed .
+
+km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+
+_:node1b3ih2jfmx5 rr:tableName "hg_cve-for-karma.jl" ;
+	a rr:LogicalTable ;
+	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+
+_:node1b3ih2jfmx1 km-dev:hasLogicalTable _:node1b3ih2jfmx5 .
+
+km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed rr:logicalTable _:node1b3ih2jfmx5 ;
+	rr:subjectMap _:node1b3ih2jfmx6 .
+
+_:node1b3ih2jfmx1 km-dev:hasSubjectMap _:node1b3ih2jfmx6 .
+
+_:node1b3ih2jfmx6 km-dev:isPartOfMapping _:node1b3ih2jfmx1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://schema.dig.isi.edu/ontology/Vulnerability1" ;
 	rr:class memex:Vulnerability ;
 	rr:template "{[\"json_rep\",\"cve\"]}" ;
 	a km-dev:steinerTreeRootNode .
 
-km-dev:PredicateObjectMap_280cbd71-6b27-4dec-9996-f739526bd02c rr:predicate schema:startDate .
+km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 rr:predicate memex:hasCVSS .
 
-_:node1b3iguuo0x4 rr:column "[\"json_rep\",\"timestamp\"]" ;
+km-dev:RefObjectMap_3703ea2e-5795-4af6-a30c-50841a47f2c3 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 ;
+	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+
+_:node1b3ih2jfmx1 km-dev:hasObjectMap km-dev:RefObjectMap_3703ea2e-5795-4af6-a30c-50841a47f2c3 .
+
+km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 rr:objectMap km-dev:RefObjectMap_3703ea2e-5795-4af6-a30c-50841a47f2c3 .
+
+km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed rr:predicateObjectMap km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 .
+
+km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+
+_:node1b3ih2jfmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 .
+
+km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca rr:predicate schema:startDate .
+
+_:node1b3ih2jfmx7 rr:column "[\"json_rep\",\"timestamp\"]" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1b3iguuo0x1 .
+	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
 
-_:node1b3iguuo0x1 km-dev:hasObjectMap _:node1b3iguuo0x4 .
+_:node1b3ih2jfmx1 km-dev:hasObjectMap _:node1b3ih2jfmx7 .
 
-km-dev:PredicateObjectMap_280cbd71-6b27-4dec-9996-f739526bd02c rr:objectMap _:node1b3iguuo0x4 .
+km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca rr:objectMap _:node1b3ih2jfmx7 .
 
-km-dev:TriplesMap_f3af79db-1ec6-4e64-a50c-7abeda6f10d1 rr:predicateObjectMap km-dev:PredicateObjectMap_280cbd71-6b27-4dec-9996-f739526bd02c .
+km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed rr:predicateObjectMap km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca .
 
-km-dev:PredicateObjectMap_280cbd71-6b27-4dec-9996-f739526bd02c a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1b3iguuo0x1 .
+km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
 
-_:node1b3iguuo0x1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_280cbd71-6b27-4dec-9996-f739526bd02c .
+_:node1b3ih2jfmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca .

@@ -14,9 +14,9 @@
 @prefix rr: <http://www.w3.org/ns/r2rml#> .
 @prefix km-dev: <http://isi.edu/integration/karma/dev#> .
 
-_:node1b3ih2jfmx1 a km-dev:R2RMLMapping ;
+_:node1b3ih4snlx1 a km-dev:R2RMLMapping ;
 	km-dev:sourceName "hg_cve-for-karma.jl" ;
-	km-dev:modelPublicationTime "1481311866358"^^xsd:long ;
+	km-dev:modelPublicationTime "1481311941366"^^xsd:long ;
 	km-dev:modelVersion "1.7" ;
 	km-dev:hasInputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"timestamp\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"vulnerability_scoring\"},{\"columnName\":\"cvss:base_metrics\"},{\"columnName\":\"cvss:access-complexity\"},{\"columnName\":\"#text\"}]]" ;
 	km-dev:hasOutputColumns "[[{\"columnName\":\"json_rep\"},{\"columnName\":\"timestamp\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"cve\"}],[{\"columnName\":\"json_rep\"},{\"columnName\":\"vulnerability_scoring\"},{\"columnName\":\"cvss:base_metrics\"},{\"columnName\":\"cvss:access-complexity\"},{\"columnName\":\"#text\"}]]" ;
@@ -587,101 +587,101 @@ _:node1b3ih2jfmx1 a km-dev:R2RMLMapping ;
     }
 ]""" .
 
-km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 a rr:TriplesMap .
+km-dev:TriplesMap_ab9fbcff-92d5-42e2-83f7-c23692e498d0 a rr:TriplesMap .
 
-_:node1b3ih2jfmx1 km-dev:hasTriplesMap km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 .
+_:node1b3ih4snlx1 km-dev:hasTriplesMap km-dev:TriplesMap_ab9fbcff-92d5-42e2-83f7-c23692e498d0 .
 
-km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+km-dev:TriplesMap_ab9fbcff-92d5-42e2-83f7-c23692e498d0 km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx2 rr:tableName "hg_cve-for-karma.jl" ;
+_:node1b3ih4snlx2 rr:tableName "hg_cve-for-karma.jl" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+	km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx1 km-dev:hasLogicalTable _:node1b3ih2jfmx2 .
+_:node1b3ih4snlx1 km-dev:hasLogicalTable _:node1b3ih4snlx2 .
 
-km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 rr:logicalTable _:node1b3ih2jfmx2 ;
-	rr:subjectMap _:node1b3ih2jfmx3 .
+km-dev:TriplesMap_ab9fbcff-92d5-42e2-83f7-c23692e498d0 rr:logicalTable _:node1b3ih4snlx2 ;
+	rr:subjectMap _:node1b3ih4snlx3 .
 
-_:node1b3ih2jfmx1 km-dev:hasSubjectMap _:node1b3ih2jfmx3 .
+_:node1b3ih4snlx1 km-dev:hasSubjectMap _:node1b3ih4snlx3 .
 
-_:node1b3ih2jfmx3 km-dev:isPartOfMapping _:node1b3ih2jfmx1 ;
+_:node1b3ih4snlx3 km-dev:isPartOfMapping _:node1b3ih4snlx1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://schema.dig.isi.edu/ontology/CVSS1" ;
 	rr:class memex:CVSS ;
 	rr:termType rr:BlankNode ;
 	km-dev:namePrefix "memex:CVSS1" .
 
-km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 rr:predicate memex:cvssComplexity .
+km-dev:PredicateObjectMap_faa2032d-c8d8-4741-814b-418d523d28e7 rr:predicate memex:cvssComplexity .
 
-_:node1b3ih2jfmx4 rr:column "[\"json_rep\",\"vulnerability_scoring\",\"cvss:base_metrics\",\"cvss:access-complexity\",\"#text\"]" ;
+_:node1b3ih4snlx4 rr:column "[\"json_rep\",\"vulnerability_scoring\",\"cvss:base_metrics\",\"cvss:access-complexity\",\"#text\"]" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+	km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx1 km-dev:hasObjectMap _:node1b3ih2jfmx4 .
+_:node1b3ih4snlx1 km-dev:hasObjectMap _:node1b3ih4snlx4 .
 
-km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 rr:objectMap _:node1b3ih2jfmx4 .
+km-dev:PredicateObjectMap_faa2032d-c8d8-4741-814b-418d523d28e7 rr:objectMap _:node1b3ih4snlx4 .
 
-km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 rr:predicateObjectMap km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 .
+km-dev:TriplesMap_ab9fbcff-92d5-42e2-83f7-c23692e498d0 rr:predicateObjectMap km-dev:PredicateObjectMap_faa2032d-c8d8-4741-814b-418d523d28e7 .
 
-km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+km-dev:PredicateObjectMap_faa2032d-c8d8-4741-814b-418d523d28e7 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_501e0f00-b82e-45e3-bbc1-44dc96d69af1 .
+_:node1b3ih4snlx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_faa2032d-c8d8-4741-814b-418d523d28e7 .
 
-km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed a rr:TriplesMap .
+km-dev:TriplesMap_4e043137-580f-431c-b1c5-e132178879bd a rr:TriplesMap .
 
-_:node1b3ih2jfmx1 km-dev:hasTriplesMap km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed .
+_:node1b3ih4snlx1 km-dev:hasTriplesMap km-dev:TriplesMap_4e043137-580f-431c-b1c5-e132178879bd .
 
-km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+km-dev:TriplesMap_4e043137-580f-431c-b1c5-e132178879bd km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx5 rr:tableName "hg_cve-for-karma.jl" ;
+_:node1b3ih4snlx5 rr:tableName "hg_cve-for-karma.jl" ;
 	a rr:LogicalTable ;
-	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+	km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx1 km-dev:hasLogicalTable _:node1b3ih2jfmx5 .
+_:node1b3ih4snlx1 km-dev:hasLogicalTable _:node1b3ih4snlx5 .
 
-km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed rr:logicalTable _:node1b3ih2jfmx5 ;
-	rr:subjectMap _:node1b3ih2jfmx6 .
+km-dev:TriplesMap_4e043137-580f-431c-b1c5-e132178879bd rr:logicalTable _:node1b3ih4snlx5 ;
+	rr:subjectMap _:node1b3ih4snlx6 .
 
-_:node1b3ih2jfmx1 km-dev:hasSubjectMap _:node1b3ih2jfmx6 .
+_:node1b3ih4snlx1 km-dev:hasSubjectMap _:node1b3ih4snlx6 .
 
-_:node1b3ih2jfmx6 km-dev:isPartOfMapping _:node1b3ih2jfmx1 ;
+_:node1b3ih4snlx6 km-dev:isPartOfMapping _:node1b3ih4snlx1 ;
 	a rr:SubjectMap ;
 	km-dev:alignmentNodeId "http://schema.dig.isi.edu/ontology/Vulnerability1" ;
 	rr:class memex:Vulnerability ;
 	rr:template "{[\"json_rep\",\"cve\"]}" ;
 	a km-dev:steinerTreeRootNode .
 
-km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 rr:predicate memex:hasCVSS .
+km-dev:PredicateObjectMap_5a5e22a2-5060-456d-9c33-c96a6925f28f rr:predicate memex:hasCVSS .
 
-km-dev:RefObjectMap_3703ea2e-5795-4af6-a30c-50841a47f2c3 a rr:RefObjectMap , rr:ObjectMap ;
-	rr:parentTriplesMap km-dev:TriplesMap_15807fcd-ca12-499e-b1d0-eb333ee5bd29 ;
-	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+km-dev:RefObjectMap_e5cc8fcc-abb9-4362-b846-b3b3ef7e80d2 a rr:RefObjectMap , rr:ObjectMap ;
+	rr:parentTriplesMap km-dev:TriplesMap_ab9fbcff-92d5-42e2-83f7-c23692e498d0 ;
+	km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx1 km-dev:hasObjectMap km-dev:RefObjectMap_3703ea2e-5795-4af6-a30c-50841a47f2c3 .
+_:node1b3ih4snlx1 km-dev:hasObjectMap km-dev:RefObjectMap_e5cc8fcc-abb9-4362-b846-b3b3ef7e80d2 .
 
-km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 rr:objectMap km-dev:RefObjectMap_3703ea2e-5795-4af6-a30c-50841a47f2c3 .
+km-dev:PredicateObjectMap_5a5e22a2-5060-456d-9c33-c96a6925f28f rr:objectMap km-dev:RefObjectMap_e5cc8fcc-abb9-4362-b846-b3b3ef7e80d2 .
 
-km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed rr:predicateObjectMap km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 .
+km-dev:TriplesMap_4e043137-580f-431c-b1c5-e132178879bd rr:predicateObjectMap km-dev:PredicateObjectMap_5a5e22a2-5060-456d-9c33-c96a6925f28f .
 
-km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+km-dev:PredicateObjectMap_5a5e22a2-5060-456d-9c33-c96a6925f28f a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_231bc591-2dad-464a-a151-e725cf479fc8 .
+_:node1b3ih4snlx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_5a5e22a2-5060-456d-9c33-c96a6925f28f .
 
-km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca rr:predicate schema:startDate .
+km-dev:PredicateObjectMap_910ce4fd-2acc-44a1-8760-f859a3884a91 rr:predicate schema:startDate .
 
-_:node1b3ih2jfmx7 rr:column "[\"json_rep\",\"timestamp\"]" ;
+_:node1b3ih4snlx7 rr:column "[\"json_rep\",\"timestamp\"]" ;
 	a rr:ObjectMap ;
-	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+	km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx1 km-dev:hasObjectMap _:node1b3ih2jfmx7 .
+_:node1b3ih4snlx1 km-dev:hasObjectMap _:node1b3ih4snlx7 .
 
-km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca rr:objectMap _:node1b3ih2jfmx7 .
+km-dev:PredicateObjectMap_910ce4fd-2acc-44a1-8760-f859a3884a91 rr:objectMap _:node1b3ih4snlx7 .
 
-km-dev:TriplesMap_ab86284e-751b-453c-b1f9-adbdb739e7ed rr:predicateObjectMap km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca .
+km-dev:TriplesMap_4e043137-580f-431c-b1c5-e132178879bd rr:predicateObjectMap km-dev:PredicateObjectMap_910ce4fd-2acc-44a1-8760-f859a3884a91 .
 
-km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca a rr:PredicateObjectMap ;
-	km-dev:isPartOfMapping _:node1b3ih2jfmx1 .
+km-dev:PredicateObjectMap_910ce4fd-2acc-44a1-8760-f859a3884a91 a rr:PredicateObjectMap ;
+	km-dev:isPartOfMapping _:node1b3ih4snlx1 .
 
-_:node1b3ih2jfmx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_54e1bc62-c9ce-43d7-9eaa-12754f8d77ca .
+_:node1b3ih4snlx1 km-dev:hasPredicateObjectMap km-dev:PredicateObjectMap_910ce4fd-2acc-44a1-8760-f859a3884a91 .

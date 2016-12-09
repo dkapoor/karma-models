@@ -4,10 +4,14 @@ remincross="true"
 label="hg_cve-for-karma.jl"
 subgraph cluster {
 label="model"
-n2[style="filled",color="white",fillcolor="lightgray",label="Vulnerability1"];
-n3[shape="plaintext",style="filled",fillcolor="gold",label="cve"];
-n4[shape="plaintext",style="filled",fillcolor="gold",label="timestamp"];
+n2[style="filled",color="white",fillcolor="lightgray",label="CVSS1"];
+n3[shape="plaintext",style="filled",fillcolor="gold",label="#text"];
+n4[style="filled",color="white",fillcolor="lightgray",label="Vulnerability1"];
+n5[shape="plaintext",style="filled",fillcolor="gold",label="cve"];
+n6[shape="plaintext",style="filled",fillcolor="gold",label="timestamp"];
 }
-n2 -> n3[color="brown",fontcolor="black",label="classLink"]
-n2 -> n4[color="brown",fontcolor="black",label="startDate"]
+n2 -> n3[color="brown",fontcolor="black",label="cvssComplexity"]
+n4 -> n5[color="brown",fontcolor="black",label="classLink"]
+n4 -> n2[color="brown",fontcolor="black",label="hasCVSS"]
+n4 -> n6[color="brown",fontcolor="black",label="startDate"]
 }

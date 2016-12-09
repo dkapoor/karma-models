@@ -6,6 +6,7 @@
 | Column | Property | Class |
 |  ----- | -------- | ----- |
 | _cve_ | `uri` | `memex:Vulnerability1`|
+| _timestamp_ | `schema:startDate` | `memex:Vulnerability1`|
 
 
 ### Links

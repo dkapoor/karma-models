@@ -7,9 +7,18 @@
             "id": "HN25",
             "hNodeId": "HN25",
             "columnName": "cve"
+        },
+        {
+            "id": "HN29",
+            "hNodeId": "HN29",
+            "columnName": "timestamp"
         }
     ],
     "mappingToSourceColumns": [
+        {
+            "id": "HN29",
+            "sourceColumnId": "HN29"
+        },
         {
             "id": "HN25",
             "sourceColumnId": "HN25"
@@ -54,6 +63,62 @@
                 ],
                 "learnedSemanticTypes": null,
                 "modelIds": null
+            },
+            {
+                "id": "HN29",
+                "label": {
+                    "uri": "HN29",
+                    "rdfsLabel": null
+                },
+                "type": "ColumnNode",
+                "hNodeId": "HN29",
+                "columnName": "timestamp",
+                "rdfLiteralType": null,
+                "language": "",
+                "userSemanticTypes": [
+                    {
+                        "hNodeId": "HN29",
+                        "domain": {
+                            "uri": "http://schema.dig.isi.edu/ontology/Vulnerability",
+                            "rdfsLabel": "Vulnerability"
+                        },
+                        "type": {
+                            "uri": "http://schema.org/startDate",
+                            "rdfsLabel": "startDate"
+                        },
+                        "origin": "User",
+                        "confidenceScore": 1.0
+                    }
+                ],
+                "learnedSemanticTypes": [
+                    {
+                        "hNodeId": "HN29",
+                        "domain": {
+                            "uri": "http://schema.dig.isi.edu/ontology/Vulnerability",
+                            "rdfsLabel": "Vulnerability"
+                        },
+                        "type": {
+                            "uri": "http://schema.org/startDate",
+                            "rdfsLabel": "startDate"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.8386426799919834
+                    },
+                    {
+                        "hNodeId": "HN29",
+                        "domain": {
+                            "uri": "http://schema.dig.isi.edu/ontology/CVSS",
+                            "rdfsLabel": "CVSS"
+                        },
+                        "type": {
+                            "uri": "http://schema.org/datePublished",
+                            "rdfsLabel": "datePublished"
+                        },
+                        "origin": "TfIdfModel",
+                        "confidenceScore": 0.16135732000801659
+                    }
+                ],
+                "modelIds": null
             }
         ],
         "links": [
@@ -67,6 +132,18 @@
                 },
                 "status": "ForcedByUser",
                 "keyInfo": "UriOfInstance",
+                "modelIds": null
+            },
+            {
+                "id": "http://schema.dig.isi.edu/ontology/Vulnerability1---http://schema.org/startDate---HN29",
+                "weight": 0.01,
+                "type": "DataPropertyLink",
+                "label": {
+                    "uri": "http://schema.org/startDate",
+                    "rdfsLabel": "startDate"
+                },
+                "status": "ForcedByUser",
+                "keyInfo": "None",
                 "modelIds": null
             }
         ]
